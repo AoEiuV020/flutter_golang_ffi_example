@@ -4,7 +4,7 @@ description: Bindings to `src/sum.h`.
 output: 'lib/generated_bindings.dart'
 headers:
   entry-points:
-    - 'src/libsum.h'
+    - 'src/libsum.h' # cd src && go tool cgo -objdir ../build/go/_obj -exportheader libsum.h sum.go
 preamble: |
   // ignore_for_file: always_specify_types
   // ignore_for_file: camel_case_types
