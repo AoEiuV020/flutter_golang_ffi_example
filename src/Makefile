@@ -100,3 +100,10 @@ macos:
 	mv ${LIB_NAME}.dylib ../macos/${LIB_NAME}.dylib
 	rm ${LIB_NAME}_*.h
 	rm ${LIB_NAME}_*.dylib
+
+windows:
+	CGO_ENABLED=1 \
+	GOOS=windows \
+	GOARCH=amd64 \
+	go build -trimpath -buildmode=c-shared -o ./lib_cache/Windows/AMD64/${LIB_NAME}.dll .
+	rm ${LIB_NAME}_*.h

@@ -21,7 +21,7 @@ final DynamicLibrary _dylib = () {
     return DynamicLibrary.open('libsum.so');
   }
   if (Platform.isWindows) {
-    return DynamicLibrary.open('$_libName.dll');
+    return DynamicLibrary.open('libsum.dll');
   }
   throw UnsupportedError('Unknown platform: ${Platform.operatingSystem}');
 }();
