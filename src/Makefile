@@ -106,4 +106,10 @@ windows:
 	GOOS=windows \
 	GOARCH=amd64 \
 	go build -trimpath -buildmode=c-shared -o ./lib_cache/Windows/AMD64/${LIB_NAME}.dll .
-	rm ${LIB_NAME}_*.h
+
+linux:
+	mkdir -p ./lib_cache/Linux/x86_64
+	CGO_ENABLED=1 \
+	GOOS=linux \
+	GOARCH=amd64 \
+	go build -trimpath -buildmode=c-shared -o ./lib_cache/Linux/x86_64/${LIB_NAME}.so .
