@@ -17,6 +17,6 @@ project(${PROJECT_NAME} LANGUAGES CXX)
 set(native_add_bundled_libraries
   # Defined in ../src/CMakeLists.txt.
   # This can be changed to accommodate different builds.
-  ${CMAKE_CURRENT_SOURCE_DIR}/../src/lib_cache/${CMAKE_SYSTEM_NAME}/${CMAKE_SYSTEM_PROCESSOR}/libsum${CMAKE_SHARED_LIBRARY_SUFFIX}
+  ${CMAKE_CURRENT_SOURCE_DIR}/../lib_cache/${CMAKE_SYSTEM_NAME}/${CMAKE_SYSTEM_PROCESSOR}/libsum${CMAKE_SHARED_LIBRARY_SUFFIX}
   PARENT_SCOPE
 )
