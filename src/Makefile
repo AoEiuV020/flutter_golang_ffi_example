@@ -108,8 +108,11 @@ windows:
 	go build -trimpath -buildmode=c-shared -o ./../lib_cache/Windows/AMD64/${LIB_NAME}.dll .
 
 linux:
-	mkdir -p ./lib_cache/Linux/x86_64
 	CGO_ENABLED=1 \
 	GOOS=linux \
 	GOARCH=amd64 \
 	go build -trimpath -buildmode=c-shared -o ./../lib_cache/Linux/x86_64/${LIB_NAME}.so .
+
+web:
+	GOOS=js GOARCH=wasm go build -o ../lib_cache/web/${LIB_NAME}.wasm .
+	cp "$(shell go env GOROOT)/lib/wasm/wasm_exec.js" ../lib_cache/web/
